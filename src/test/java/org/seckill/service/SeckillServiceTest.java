@@ -13,6 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import java.util.Date;
 import java.util.List;
 
 import static org.junit.Assert.*;
@@ -45,7 +46,7 @@ public class SeckillServiceTest {
 
     @Test
     public void exportSeckillUrl() throws Exception {
-        long id = 1000;
+        long id = 1001;
         Exposer exposer = seckillService.exportSeckillUrl(id);
         logger.info("exposer={}",exposer);
         /**
@@ -100,14 +101,16 @@ public class SeckillServiceTest {
 
     @Test
     public void  executeSeckillProcedure() {
-        long seckillId = 1000;
+        /*long seckillId = 1000;
         long phone = 13455566666L;
         Exposer exposer = seckillService.exportSeckillUrl(seckillId);
         if(exposer.isExposed()) {
             String md5 = exposer.getMd5();
             SeckillExecution execution = seckillService.executeSeckillProcedure(seckillId, phone, md5);
             logger.info(execution.getStateInfo());
-        }
+        }*/
+        Date date = new Date();
+        System.out.print(date.getTime());
     }
 
 }
